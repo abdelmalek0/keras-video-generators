@@ -194,7 +194,7 @@ class VideoFrameGenerator(Sequence):  # pylint: disable=too-many-instance-attrib
     def __split_from_vals(self, split_val, split_test, classes, shuffle, glob_pattern):
         """ Split validation and test set """
 
-        if split_val == 0 or split_test == 0:
+        if split_val == 0 and split_test == 0:
             # no splitting, do the simplest thing
             for cls in classes:
                 self.files += glob.glob(glob_pattern.format(classname=cls))
